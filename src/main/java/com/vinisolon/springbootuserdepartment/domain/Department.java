@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -24,7 +26,6 @@ public class Department {
     private Long id;
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "fk_user_id")
-    private User user;
+    @OneToMany(mappedBy = "department")
+    private List<User> users = new ArrayList<>();
 }
