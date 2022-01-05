@@ -1,7 +1,7 @@
 package com.vinisolon.springbootuserdepartment.services;
 
 import com.vinisolon.springbootuserdepartment.domain.User;
-import com.vinisolon.springbootuserdepartment.repo.UserRepo;
+import com.vinisolon.springbootuserdepartment.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

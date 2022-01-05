@@ -33,7 +33,7 @@ public class UserController {
         return ResponseEntity.ok().body(obj);
     }
 
-    @PostMapping
+    @PostMapping(value = "/insert")
     public ResponseEntity<User> insert(@RequestBody User obj) {
         User saveObj = service.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(saveObj.getId()).toUri();

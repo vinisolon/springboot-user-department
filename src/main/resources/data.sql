@@ -1,7 +1,7 @@
-INSERT INTO tb_department(name) VALUES ('Gestão');
-INSERT INTO tb_department(name) VALUES ('Informática');
+INSERT INTO departments(name) VALUES ('Gestão');
+INSERT INTO departments(name) VALUES ('Informática');
 
-INSERT INTO tb_user(fk_department_id, name, email) VALUES (1, 'Maria', 'maria@gmail.com');
-INSERT INTO tb_user(fk_department_id, name, email) VALUES (1, 'Bob', 'bob@gmail.com');
-INSERT INTO tb_user(fk_department_id, name, email) VALUES (2, 'Alex', 'alex@gmail.com');
-INSERT INTO tb_user(fk_department_id, name, email) VALUES (2, 'Ana', 'ana@gmail.com');
+INSERT INTO users(fk_department_id, email, password) VALUES (1, 'maria@gmail.com', '123456');
+INSERT INTO users(fk_department_id, email, password) VALUES (1, 'bob@gmail.com', '654987');
+INSERT INTO users(fk_department_id, email, password) VALUES (2, 'alex@gmail.com', 'aaa123');
+INSERT INTO users(fk_department_id, email, password) VALUES (2, 'ana@gmail.com', '321kjh');
