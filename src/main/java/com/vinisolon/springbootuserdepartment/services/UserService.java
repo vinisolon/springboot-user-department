@@ -24,7 +24,7 @@ public class UserService {
         }
     }
 
-    public void insert(User obj) {
-        repo.save(obj);
+    public User insert(User obj) {
+        return repo.save(obj);
     }
 }
