@@ -1,6 +1,7 @@
 package com.vinisolon.springbootuserdepartment.controllers;
 
 import com.vinisolon.springbootuserdepartment.domain.User;
+import com.vinisolon.springbootuserdepartment.dto.UserDepartmentDTO;
 import com.vinisolon.springbootuserdepartment.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,20 +23,20 @@ public class UserController {
     UserService service;
 
     @GetMapping
-    public ResponseEntity<List<User>> findAll() {
-        List<User> list = service.findAll();
+    public ResponseEntity<List<UserDepartmentDTO>> getAllUsersDepartment() {
+        List<UserDepartmentDTO> list = service.getAllUsersDepartment();
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "{id}")
-    public ResponseEntity<User> findById(@PathVariable Long id) {
-        User obj = service.findById(id);
+    public ResponseEntity<UserDepartmentDTO> getUserDepartment(@PathVariable Long id) {
+        UserDepartmentDTO obj = service.getUserDepartment(id);
         return ResponseEntity.ok().body(obj);
     }
 
     @PostMapping(value = "/insert")
-    public ResponseEntity<User> insert(@RequestBody User obj) {
-        User saveObj = service.insert(obj);
+    public ResponseEntity<User> insert(@RequestBody UserDepartmentDTO dto) {
+        User saveObj = service.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(saveObj.getId()).toUri();
         return ResponseEntity.created(uri).body(saveObj);
     }
